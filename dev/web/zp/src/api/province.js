@@ -1,8 +1,9 @@
 /*
- * @Author: yepeng 
- * @Date: 2019-12-25 09:47:27 
- * @Last Modified by: yepeng
- * @Last Modified time: 2019-12-25 14:43:58
+ * @Author: liuyr 
+ * 省份模块API
+ * @Date: 2019-12-22 18:54:17 
+ * @Last Modified by: liuyr
+ * @Last Modified time: 2019-12-25 09:37:38
  */
 import axios from '@/utils/axios'
 /**
@@ -23,7 +24,9 @@ export function findAllProvince() {
  * @param {Object} param {id:''}
  */
 export function findProvinceById(param) {
-  return axios.get('/Province/findById', {params: param});
+  return axios.get('/Province/findById', {
+    params: param
+  });
 }
 /**
  * 保存或更新省份信息

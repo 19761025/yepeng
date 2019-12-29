@@ -3,7 +3,7 @@
  * 商家列表页面
  * @Date: 2019-12-23 17:11:53 
  * @Last Modified by: yepeng
- * @Last Modified time: 2019-12-27 19:06:25
+ * @Last Modified time: 2019-12-28 17:06:41
  */
 <template>
   <div id="businessList">
@@ -42,6 +42,9 @@
           <template slot-scope="scope">{{scope.row.province}}-{{scope.row.city}}</template>
         </el-table-column>
         <el-table-column align="center" prop="scale" label="公司规模"></el-table-column>
+
+        <el-table-column align="center" prop="status" label="审核状态"></el-table-column>
+
         <el-table-column align="center" label="详情">
           <template slot-scope="scope">
             <el-button @click="toSee(scope.row)" type="text" size="small">查看</el-button>
@@ -215,6 +218,12 @@ export default {
       industry: "",
       //规模
       scale: "",
+
+      //审核状态
+      status:"",
+      //审核数组
+      statusData: [],
+
       //省份数组
       provinceData: [],
       //城市数组
@@ -418,6 +427,7 @@ export default {
         this.findAllBus();
       }
     },
+
     //查看
     toSee(row) {
       this.currentBus = { ...row };
